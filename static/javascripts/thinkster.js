@@ -19,8 +19,7 @@ angular
 	.module('thinkster')
 	.run(run);
 
-	//run blocks run before anything else is excecuted, used to set initail app settings
-inital app settings
+	//run blocks run before anything else is excecuted, used to set initail app setting
 
 run.$inject = ['$http']
 
