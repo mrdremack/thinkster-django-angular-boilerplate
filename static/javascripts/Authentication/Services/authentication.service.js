@@ -15,6 +15,7 @@ function Authentication($cookies, $http) {
 		setAuthenticateAccount: setAuthenticateAccount,
 		unauthenticate: unauthenticate,
 		isAuthenticated: isAuthenticated,
+		logout:logout,
 	};
 	return Authentication;
 	function register(email, password,username) {
@@ -59,6 +60,21 @@ function Authentication($cookies, $http) {
 
 	function unauthenticate(){
 		delete $cookies.authenticatedAccount;
+	}
+
+	function logout(){
+		return $http.post('/api/v1/logout/').then(
+			logoutSuccessFn, logoutErrorFn
+			);
+
+		function logoutSuccessFn(data, status, headers, config){
+			Authentciation.unauthenticate();
+			window.location='/';
+		};
+
+		function logoutErrorFn(data, status, headers, config){
+			console.error('Epic failure');
+		}
 	}
 };
 
