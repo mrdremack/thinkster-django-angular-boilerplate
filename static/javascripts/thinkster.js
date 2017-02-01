@@ -8,8 +8,9 @@ angular
   	'thinkster.authentication',
   	'thinkster.layout',
   	'thinkster.posts',
-
-]);
+  	'thinkster.utils',
+  	'thinkster.profiles',
+	]);
 
 angular
   .module('thinkster.routes', ['ngRoute']);

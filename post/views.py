@@ -5,9 +5,9 @@ from rest_framework import permissions, viewsets
 from rest_framework.response import Response
 from models import Post
 from serializers import PostSerializer
-from permissions import IsAuthorofPost
+from permissions import IsAuthorOfPost
 
-class PostViewSet(viewset.ModelViewSet):
+class PostViewSet(viewsets.ModelViewSet):
 	queryset = Post.objects.order_by('-created_at')
 	serializer_class = PostSerializer()
 
